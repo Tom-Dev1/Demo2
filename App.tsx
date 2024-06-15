@@ -11,6 +11,9 @@ import { UseStateExample } from "./src/components/UseStateExample";
 import { UseCallback } from "./src/components/UseCallback";
 import { UseMemoEx } from "./src/components/UseMemoEx";
 import { UseEffectExample } from "./src/components/UseEffectExample";
+import { Provider } from "react-redux";
+import { store } from "./src/store";
+import CounterExample from "./src/components/CounterExample";
 export default function App() {
   // const userService = container.get<UserService>('UserService');
   // const postClient = container.get<PostClient>('PostClient');
@@ -23,9 +26,11 @@ export default function App() {
     //     }}>
     //   </Button>
     // </View>
-    <View>
-      <UseEffectExample />
-    </View>
+    <Provider store={store}>
+      <View>
+        <CounterExample />
+      </View>
+    </Provider>
   );
 }
 
